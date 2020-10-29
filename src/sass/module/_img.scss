@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+// imgResponsive (画像レスポンシブ)
+.imgResponsive {
+  // 画像の比率は1:1
+  $box-h: 315; // PC用サイズ
+  $box-w: 420; // PC用サイズ
+  $img-h: 640; // イメージの原寸
+  $img-w: 640; // イメージの原寸
+
+  margin-bottom: 15px;
+  width: #{$box-w}px;
+  &_inner {
+    overflow: hidden;
+    position: relative;
+    height: #{$box-h}px;
+  }
+  &_caption {
+    display: block;
+    margin: 5px　0;
+  }
+  &_img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin-top: #{-1 * $box-w / 2}px;
+    margin-left: #{-1 * $box-w / 2}px;
+    max-height: #{$img-h}px;
+    width: 100%;
+  }
+  @include max-screen($bp-tab) {
+    &_inner {
+      height: auto;
+      padding-bottom: 75%;
+    }
+    &_img {
+      margin-top: 0;
+      margin-left: 0;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+  @include max-screen($bp-sp) {
+    margin-bottom: 30px;
+    &_inner {
+      padding-bottom: 56.25%;
+    }
+  }
+}

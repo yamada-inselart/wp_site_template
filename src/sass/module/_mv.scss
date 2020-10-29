@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+// mv
+.mv {
+	.mv_inner {
+	}
+	@include max-screen($bp-tab) {
+		.mv_inner {
+		}
+	}
+	@include max-screen($bp-sp) {
+		.mv_inner {
+		}
+	}
+}
+
+.mvSub {
+	
+}

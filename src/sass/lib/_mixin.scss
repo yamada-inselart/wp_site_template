@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+/*----------------------------------------------------
+
+	Mixinをまとめたファイルです。
+	基本的に変更することはありません。
+	Mixinを追加したい場合、_mixin_●●.scssという
+	別ファイルを生成し、追加してください。
+
+----------------------------------------------------*/
+
+// フォントサイズ
+@mixin font-size($size) {
+  font-size: $size + px;
+  font-size: ($size / 10) + rem;
+}
+
+// position
+@mixin absolute-tL($top: 0, $left: 0) {
+  position: absolute;
+  top: $top + px;
+  left: $left + px;
+}
+@mixin absolute-tR($top: 0, $right: 0) {
+  position: absolute;
+  top: $top + px;
+  right: $right + px;
+}
+@mixin absolute-bL($bottom: 0, $left: 0) {
+  position: absolute;
+  bottom: $bottom + px;
+  left: $left + px;
+}
+@mixin absolute-bR($bottom: 0, $right: 0) {
+  position: absolute;
+  bottom: $bottom + px;
+  right: $right + px;
+}
+
+/*--------------------------
+	センター配置
+--------------------------*/
+@mixin translate-center { //translateで中央に配置
+	-webkit-transform: translate(-50%, -50%);
+     	       -moz-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+@mixin margin-center($mt: 0, $ml: 0) { //マイナスマージンで中央に配置
+	margin-top: -#{$mt}px;
+	margin-left: -#{$ml}px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+/*--------------------------
+	レスポンシブ関連
+--------------------------*/
+@mixin max-screen($break-point) {
+	@if $responsive == 1 {
+		@media screen and (max-width: $break-point) {
+			@content;
+		}
+	}
+}
+@mixin min-screen($break-point) {
+	@if $responsive == 1 {
+		@media screen and (min-width: $break-point) {
+			@content;
+		}
+	}
+}

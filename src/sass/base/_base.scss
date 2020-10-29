@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/*----------------------------------------------------
+
+	初期設定を行うファイルです。
+	デフォルトの設定を行う時以外、基本的に編集することはありません。
+
+----------------------------------------------------*/
+
+body {
+	background: $base-color;
+	color: $font-color;
+	font-size: #{$font-size-px}px;
+	font-size: #{$font-size-rem}rem;
+	font-family: $font-family;
+	line-height: $line-height;
+}
+
+.wrap {
+	overflow: hidden;
+	position: relative;
+}
+
+img {
+	max-height: 100%;
+  max-width: 100%;
+}

@@ -1,0 +1,341 @@
+@charset "utf-8";
+
+/*----------------------------------------------------
+  リサイズ時のtransition停止
+----------------------------------------------------*/
+body.transitionStop * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important; }
+
+$speed: 0.65;
+
+/*----------------------------------------------------
+  見出し アニメーション
+----------------------------------------------------*/
+.a-headingA {
+  $speed: $speed;
+
+  opacity: 0;
+  transition: #{$speed}s;
+  &.active {
+    opacity: 1;
+  }
+}
+
+/*----------------------------------------------------
+  anim-Txts
+*/
+/*----------------------------------------------------
+  使用方法：
+
+<h1 class="as a-anim-Txts">
+  <span class="anim-Txt anim-Txt-0">テ</span>
+  <span class="anim-Txt anim-Txt-1">キ</span>
+  <span class="anim-Txt anim-Txt-2">ス</span>
+  <span class="anim-Txt anim-Txt-3">ト</span>
+</h1>
+----------------------------------------------------*/
+.a-anim-Txts {
+  $speed: $speed;
+  $delay: 0.0625;
+  $max: 60;
+
+  .anim-Txt {
+    display: inline-block;
+    opacity: 0;
+    -webkit-transform: translate(60px, 0) skewX(-30deg) scale(1, 1);
+    -moz-transform: translate(60px, 0) skewX(-30deg) scale(1, 1);
+    transform: translate(60px, 0) skewX(-30deg) scale(1, 1);
+    @for $i from 0 through $max {
+      &.anim-Txt-#{$i} {
+        transition: #{$speed}s #{$delay * $i}s;
+      }
+    }
+  }
+  // アニメーション後
+  &.active {
+    .anim-Txt {
+      opacity: 1;
+      -webkit-transform: translate(0, 0) skewX(0deg) scale(1, 1);
+      -moz-transform: translate(0, 0) skewX(0deg) scale(1, 1);
+      transform: translate(0, 0) skewX(0deg) scale(1, 1);
+    }
+  }
+}
+
+/*----------------------------------------------------
+  slideBoxA
+*/
+/*----------------------------------------------------
+  使用方法：
+
+  <div class="as a-slideBoxA">
+    <img src="./img/sample.jpg" alt="" />
+  </div>
+----------------------------------------------------*/
+.a-slideBoxA {
+  $speed: $speed;
+  $box-color: #bbb;
+  $img-scale: 1.5;
+
+  overflow: hidden;
+  opacity: 1;
+  position: relative;
+  -webkit-transform: scale(1, 0);
+  -moz-transform: scale(1, 0);
+  transform: scale(1, 0);
+  -webkit-transform-origin: top center;
+  -moz-transform-origin: top center;
+  transform-origin: top center;
+  transition: #{$speed}s;
+  &:after {
+    background: $box-color; /* Old browsers */
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    opacity: 1;
+    transition: #{$speed}s #{$speed}s;
+  }
+  img {
+    transition: #{$speed}s #{$speed}s;
+    -webkit-transform: scale($img-scale, $img-scale);
+    -moz-transform: scale($img-scale, $img-scale);
+    transform: scale($img-scale, $img-scale);
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    transform-origin: center center;
+  }
+
+  &.a-slideBoxA-t {
+    -webkit-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    transform: scale(1, 0);
+    -webkit-transform-origin: top center;
+    -moz-transform-origin: top center;
+    transform-origin: top center;
+  }
+  &.a-slideBoxA-b {
+    -webkit-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    transform: scale(1, 0);
+    -webkit-transform-origin: bottom center;
+    -moz-transform-origin: bottom center;
+    transform-origin: bottom center;
+  }
+  &.a-slideBoxA-l {
+    -webkit-transform: scale(0, 1);
+    -moz-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    transform-origin: left center;
+  }
+  &.a-slideBoxA-r {
+    -webkit-transform: scale(0, 1);
+    -moz-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transform-origin: right center;
+    -moz-transform-origin: right center;
+    transform-origin: right center;
+  }
+
+  // アニメーション後
+  &.active {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    transform: scale(1, 1);
+    &:after {
+      opacity: 0;
+    }
+    img {
+      -webkit-transform: scale(1, 1);
+      -moz-transform: scale(1, 1);
+      transform: scale(1, 1);
+    }
+  }
+}
+
+/*----------------------------------------------------
+  slideBoxB
+*/
+/*----------------------------------------------------
+  使用方法：
+
+  <div class="as a-slideBoxB">
+    <div class="slideBoxB_bg">
+      <img src="" alt="">
+    </div>
+  </div>
+----------------------------------------------------*/
+.a-slideBoxB {
+  $speed: $speed;
+
+  display: block;
+  img {
+    vertical-align: middle;
+  }
+  .slideBoxB_bg {
+    background: #fff;
+    display: inline-block;
+    position: relative;
+    -webkit-transform-origin: right center;
+    -moz-transform-origin: right center;
+    transform-origin: right center;
+    overflow: hidden;
+    img {
+      opacity: 0;
+      -webkit-transform: scale(1.1, 1.1);
+      -moz-transform: scale(1.1, 1.1);
+      transform: scale(1.1, 1.1);
+      -webkit-transform-origin: right center;
+      -moz-transform-origin: right center;
+      transform-origin: right center;
+      transition: all #{$speed}s;
+    }
+    &:after {
+      background: #fff;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 99;
+      margin-left: 100%;
+      -webkit-transform: translate(-100%, 0);
+      -moz-transform: translate(-100%, 0);
+      transform: translate(-100%, 0);
+      transition: all #{$speed}s;
+    }
+  }
+
+  &.a-slideBoxB-t {
+    .slideBoxB_bg {
+      -webkit-transform-origin: bottom center;
+      -moz-transform-origin: bottom center;
+      transform-origin: bottom center;
+      img {
+        -webkit-transform-origin: bottom center;
+        -moz-transform-origin: bottom center;
+        transform-origin: bottom center;
+      }
+      &:after {
+        margin: 100% 0 0 0;
+        -webkit-transform: translate(0, -100%);
+        -moz-transform: translate(0, -100%);
+        transform: translate(0, -100%);
+      }
+    }
+  }
+  &.a-slideBoxB-b {
+    .slideBoxB_bg {
+      -webkit-transform-origin: top center;
+      -moz-transform-origin: top center;
+      transform-origin: top center;
+      img {
+        -webkit-transform-origin: top center;
+        -moz-transform-origin: top center;
+        transform-origin: top center;
+      }
+      &:after {
+        margin: -100% 0 0 0;
+        -webkit-transform: translate(0, 100%);
+        -moz-transform: translate(0, 100%);
+        transform: translate(0, 100%);
+      }
+    }
+  }
+  &.a-slideBoxB-l {
+    .slideBoxB_bg {
+      -webkit-transform-origin: right center;
+      -moz-transform-origin: right center;
+      transform-origin: right center;
+      img {
+        -webkit-transform-origin: right center;
+        -moz-transform-origin: right center;
+        transform-origin: right center;
+      }
+      &:after {
+        margin: 0 0 0 100%;
+        -webkit-transform: translate(-100%, 0);
+        -moz-transform: translate(-100%, 0);
+        transform: translate(-100%, 0);
+      }
+    }
+  }
+  &.a-slideBoxB-r {
+    .slideBoxB_bg {
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      transform-origin: left center;
+      img {
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        transform-origin: left center;
+      }
+      &:after {
+        margin: 0 0 0 -100%;
+        -webkit-transform: translate(100%, 0);
+        -moz-transform: translate(100%, 0);
+        transform: translate(100%, 0);
+      }
+    }
+  }
+  // アニメーション後
+  &.active {
+    .slideBoxB_bg {
+      img {
+        opacity: 1;
+        -webkit-transform: scale(1, 1);
+        -moz-transform: scale(1, 1);
+        transform: scale(1, 1);
+      }
+      &:after {
+        -webkit-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+/*----------------------------------------------------
+  スライダー
+----------------------------------------------------*/
+.slideGallery {
+  $speed: 60;
+  $h: 220;
+  $w: 1920;
+
+  overflow: hidden;
+  .slideGallery_inner {
+    //background: url() repeat-x;
+
+    height: #{$h}px;
+    width: #{$w * 2}px;
+    -webkit-animation: slide #{$speed}s linear infinite;
+    -moz-animation: slide #{$speed}s linear infinite;
+    animation: slide #{$speed}s linear infinite;
+    position: relative;
+  }
+  @keyframes slide {
+    0% {
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      -webkit-transform: translate3d(#{-1 * $w}px, 0, 0);
+      -moz-transform: translate3d(#{-1 * $w}px, 0, 0);
+      transform: translate3d(#{-1 * $w}px, 0, 0);
+    }
+  }
+}

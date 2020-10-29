@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+/*----------------------------------------------------
+
+	レイアウト設定のファイルです。
+	レイアウトに関する汎用性の高いスタイルをまとめています。
+	基本的には編集することはありません。
+
+	命名規則として、クラス名の頭に 
+	l-* (Layoutのl)という接頭辞をつけることを推奨します。
+
+----------------------------------------------------*/
+
+.l-inner {
+  margin: 0 auto;
+  width: $inner-width;
+  @include max-screen($bp-tab) {
+    width: 95%;
+  }
+  @include max-screen($bp-sp) {
+    max-width: 480px;
+  }
+}
+
+.l-pos-relative {
+  position: relative;
+}
+
+.l-pos-center {
+  @include translate-center();
+}
+
+.l-clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.l-left {
+  float: left;
+}
+
+.l-right {
+  float: right;
+}

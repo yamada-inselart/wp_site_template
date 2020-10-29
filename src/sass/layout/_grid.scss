@@ -1,0 +1,298 @@
+@charset "utf-8";
+
+/*----------------------------------------------------
+
+	レイアウト設定のファイルです。
+	グリッドレイアウトのスタイルをまとめています。
+	基本的には編集することはありません。
+
+	命名規則として、クラス名の頭に 
+	l-* (Layoutのl)という接頭辞をつけることを推奨します。
+
+----------------------------------------------------*/
+
+/*--------------------------
+	グリッドシステム
+--------------------------*/
+.l-grid {
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  &_item {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 16.667%;
+    &-1 {
+      width: 8.33%;
+    }
+    &-2 {
+      width: 16.667%;
+    }
+    &-3 {
+      width: 25%;
+    }
+    &-4 {
+      width: 33.333%;
+    }
+    &-5 {
+      width: 41.666%;
+    }
+    &-6 {
+      width: 50%;
+    }
+    &-7 {
+      width: 58.333%;
+    }
+    &-8 {
+      width: 66.666%;
+    }
+    &-9 {
+      width: 75%;
+    }
+    &-10 {
+      width: 83.33%;
+    }
+    &-11 {
+      width: 91.666%;
+    }
+    &-12 {
+      width: 100%;
+    }
+    &-1-tab {
+      @include max-screen($bp-tab) {
+        width: 8.33%;
+      }
+    }
+    &-2-tab {
+      @include max-screen($bp-tab) {
+        width: 16.667%;
+      }
+    }
+    &-3-tab {
+      @include max-screen($bp-tab) {
+        width: 25%;
+      }
+    }
+    &-4-tab {
+      @include max-screen($bp-tab) {
+        width: 33.333%;
+      }
+    }
+    &-5-tab {
+      @include max-screen($bp-tab) {
+        width: 41.666%;
+      }
+    }
+    &-6-tab {
+      @include max-screen($bp-tab) {
+        width: 50%;
+      }
+    }
+    &-7-tab {
+      @include max-screen($bp-tab) {
+        width: 58.333%;
+      }
+    }
+    &-8-tab {
+      @include max-screen($bp-tab) {
+        width: 66.666%;
+      }
+    }
+    &-9-tab {
+      @include max-screen($bp-tab) {
+        width: 75%;
+      }
+    }
+    &-10-tab {
+      @include max-screen($bp-tab) {
+        width: 83.33%;
+      }
+    }
+    &-11-tab {
+      @include max-screen($bp-tab) {
+        width: 91.666%;
+      }
+    }
+    &-12-tab {
+      @include max-screen($bp-tab) {
+        width: 100%;
+      }
+    }
+    &-1-sp {
+      @include max-screen($bp-sp) {
+        width: 8.33%;
+      }
+    }
+    &-2-sp {
+      @include max-screen($bp-sp) {
+        width: 16.667%;
+      }
+    }
+    &-3-sp {
+      @include max-screen($bp-sp) {
+        width: 25%;
+      }
+    }
+    &-4-sp {
+      @include max-screen($bp-sp) {
+        width: 33.333%;
+      }
+    }
+    &-5-sp {
+      @include max-screen($bp-sp) {
+        width: 41.666%;
+      }
+    }
+    &-6-sp {
+      @include max-screen($bp-sp) {
+        width: 50%;
+      }
+    }
+    &-7-sp {
+      @include max-screen($bp-sp) {
+        width: 58.333%;
+      }
+    }
+    &-8-sp {
+      @include max-screen($bp-sp) {
+        width: 66.666%;
+      }
+    }
+    &-9-sp {
+      @include max-screen($bp-sp) {
+        width: 75%;
+      }
+    }
+    &-10-sp {
+      @include max-screen($bp-sp) {
+        width: 83.33%;
+      }
+    }
+    &-11-sp {
+      @include max-screen($bp-sp) {
+        width: 91.666%;
+      }
+    }
+    &-12-sp {
+      @include max-screen($bp-sp) {
+        width: 100%;
+      }
+    }
+  }
+  &.l-gutter-s {
+    margin-left: -#{$grid-gutterS/2}px;
+    margin-right: -#{$grid-gutterS/2}px;
+    > .l-grid_item {
+      margin-bottom: #{$grid-gutterS}px;
+      padding-left: #{$grid-gutterS/2}px;
+      padding-right: #{$grid-gutterS/2}px;
+    }
+  }
+  &.l-gutter-m {
+    margin-left: -#{$grid-gutterM/2}px;
+    margin-right: -#{$grid-gutterM/2}px;
+    > .l-grid_item {
+      margin-bottom: #{$grid-gutterM}px;
+      padding-left: #{$grid-gutterM/2}px;
+      padding-right: #{$grid-gutterM/2}px;
+    }
+  }
+  &.l-gutter-l {
+    margin-left: -#{$grid-gutterL/2}px;
+    margin-right: -#{$grid-gutterL/2}px;
+    > .l-grid_item {
+      margin-bottom: #{$grid-gutterL}px;
+      padding-left: #{$grid-gutterL/2}px;
+      padding-right: #{$grid-gutterL/2}px;
+    }
+  }
+  &.l-gutter-s-tab {
+    @include max-screen($bp-tab) {
+      margin-left: -#{$grid-gutterS/2}px;
+      margin-right: -#{$grid-gutterS/2}px;
+      > .l-grid_item {
+        margin-bottom: #{$grid-gutterS}px;
+        padding-left: #{$grid-gutterS/2}px;
+        padding-right: #{$grid-gutterS/2}px;
+      }
+    }
+  }
+  &.l-gutter-m-tab {
+    @include max-screen($bp-tab) {
+      margin-left: -#{$grid-gutterM/2}px;
+      margin-right: -#{$grid-gutterM/2}px;
+      > .l-grid_item {
+        margin-bottom: #{$grid-gutterM}px;
+        padding-left: #{$grid-gutterM/2}px;
+        padding-right: #{$grid-gutterM/2}px;
+      }
+    }
+  }
+  &.l-gutter-l-tab {
+    @include max-screen($bp-tab) {
+      margin-left: -#{$grid-gutterL/2}px;
+      margin-right: -#{$grid-gutterL/2}px;
+      > .l-grid_item {
+        margin-bottom: #{$grid-gutterL}px;
+        padding-left: #{$grid-gutterL/2}px;
+        padding-right: #{$grid-gutterL/2}px;
+      }
+    }
+  }
+  &.l-gutter-s-sp {
+    @include max-screen($bp-sp) {
+      margin-left: -#{$grid-gutterS/2}px;
+      margin-right: -#{$grid-gutterS/2}px;
+      > .l-grid_item {
+        margin-bottom: #{$grid-gutterS}px;
+        padding-left: #{$grid-gutterS/2}px;
+        padding-right: #{$grid-gutterS/2}px;
+      }
+    }
+  }
+  &.l-gutter-m-sp {
+    @include max-screen($bp-sp) {
+      margin-left: -#{$grid-gutterM/2}px;
+      margin-right: -#{$grid-gutterM/2}px;
+      > .l-grid_item {
+        margin-bottom: #{$grid-gutterM}px;
+        padding-left: #{$grid-gutterM/2}px;
+        padding-right: #{$grid-gutterM/2}px;
+      }
+    }
+  }
+  &.l-gutter-l-sp {
+    @include max-screen($bp-sp) {
+      margin-left: -#{$grid-gutterL/2}px;
+      margin-right: -#{$grid-gutterL/2}px;
+      > .l-grid_item {
+        margin-bottom: #{$grid-gutterL}px;
+        padding-left: #{$grid-gutterL/2}px;
+        padding-right: #{$grid-gutterL/2}px;
+      }
+    }
+  }
+  &.l-grid-mb0 {
+    > .l-grid_item {
+      margin-bottom: 0 !important;
+    }
+  }
+  &.l-grid-mb0-tab {
+    @include max-screen($bp-tab) {
+      > .l-grid_item {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+  &.l-grid-mb0-sp {
+    @include max-screen($bp-sp) {
+      > .l-grid_item {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}

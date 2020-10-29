@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+/*----------------------------------------------------
+
+	font-familyの一覧ファイルです。
+	基本変更することはありません。
+
+----------------------------------------------------*/
+
+/*----------------------------------------------------
+  Noto Sans
+*/
+@font-face {
+    font-family: 'Noto Sans Japanese';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/noto_sans/NotoSansCJKjp-Light.woff') format('woff'),
+    url('../fonts/noto_sans/NotoSansCJKjp-Light.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Noto Sans Japanese';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/noto_sans/NotoSansCJKjp-Regular.woff') format('woff'),
+    url('../fonts/noto_sans/NotoSansCJKjp-Regular.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Noto Sans Japanese';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/noto_sans/NotoSansCJKjp-Bold.woff') format('woff'),
+    url('../fonts/noto_sans/NotoSansCJKjp-Bold.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Noto Sans Japanese';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/noto_sans/NotoSansCJKjp-Black.woff') format('woff'),
+    url('../fonts/noto_sans/NotoSansCJKjp-Black.ttf')  format('truetype');
+}
+
+/*----------------------------------------------------
+  Noto Serif 
+*/
+@font-face {
+    font-family: 'Noto Serif Japanese';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/noto_serif/NotoSerifCJKjp-Light.woff') format('woff'),
+    url('../fonts/noto_serif/NotoSerifCJKjp-Light.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Noto Serif Japanese';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/noto_serif/NotoSerifCJKjp-Regular.woff') format('woff'),
+    url('../fonts/noto_serif/NotoSerifCJKjp-Regular.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Noto Serif Japanese';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/noto_serif/NotoSerifCJKjp-Bold.woff') format('woff'),
+    url('../fonts/noto_serif/NotoSerifCJKjp-Bold.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Noto Serif Japanese';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/noto_serif/NotoSerifCJKjp-Black.woff') format('woff'),
+    url('../fonts/noto_serif/NotoSerifCJKjp-Black.ttf')  format('truetype');
+}
+
+
+
+// ゴシック(ベーシック)
+$gothic-A: Arial, "Helvetica Neue",'Hiragino Kaku Gothic ProN',Osaka,メイリオ,Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+
+// ゴシック(今風)
+$gothic-B: "Noto Sans Japanese", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+
+// 明朝
+$mincho-A: "Noto Serif Japanese", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", serif;

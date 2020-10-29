@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+// スマートフォンメニュー
+.menuSp {
+  $background: #fff;
+  $top: 105px;
+
+  display: none;
+  width: 100%;
+  z-index: 999;
+
+  position: fixed;
+  top: $top;
+  .menuSp_inner {
+    background: $background;
+    max-width: 420px;
+    margin-left: auto;
+
+    //仮
+    height: 400px;
+  }
+  @include max-screen($bp-sp) {
+    $top: 80px;
+    
+    top: $top;
+  }
+}

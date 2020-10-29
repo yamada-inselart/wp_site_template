@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+/*----------------------------------------------------
+
+	読み込み専用のマスターファイルです。
+	このファイルに直接スタイルを書き込まないでください。
+
+----------------------------------------------------*/
+
+/*--------------------------
+	setting
+--------------------------*/
+@import './setting/font-family.scss';
+@import './setting/setting.scss';
+
+
+/*--------------------------
+	libs
+--------------------------*/
+@import './lib/functions.scss';
+@import './lib/mixin.scss';
+@import './lib/animation.scss';
+
+
+/*--------------------------
+	utility
+--------------------------*/
+@import './utility/utility.scss';
+
+
+/*--------------------------
+	Base
+--------------------------*/
+@import './base/html5doctor.scss';
+@import './base/reset.scss';
+@import './base/base.scss';
+
+
+/*--------------------------
+	Layout
+--------------------------*/
+@import './layout/grid.scss';
+@import './layout/layout-utility.scss';
+@import './layout/layout.scss';
+
+
+/*--------------------------
+	module
+--------------------------*/
+@import './module/header.scss';
+@import './module/footer.scss';
+@import './module/mv.scss';
+@import './module/menu.scss';
+@import './module/form.scss';
+@import './module/table.scss';
+@import './module/media.scss';
+@import './module/post.scss';
+@import './module/heading.scss';
+@import './module/txt.scss';
+@import './module/label.scss';
+@import './module/img.scss';
+@import './module/btn.scss';
+@import './module/sns.scss';
+@import './module/wp.scss';
+@import './module/other.scss';
+
+/*--------------------------
+	page
+--------------------------*/
+@import './page/common.scss';
+@import './page/top.scss';
+
+
+/*--------------------------
+	animation
+--------------------------*/
+@import './animation/animation.scss';
+
+
+/*--------------------------
+	state
+--------------------------*/
+@import './state/state-utility.scss';
+@import './state/state.scss';
+
+

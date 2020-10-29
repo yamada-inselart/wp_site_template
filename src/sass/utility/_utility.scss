@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+/*----------------------------------------------------
+
+	汎用クラスをまとめたファイルです。
+	基本的に変更することはありません。
+	汎用クラスを追加したい場合、_utility_●●.scssという
+	別ファイルを生成し、追加してください。
+
+	命名規則として、クラス名の頭に 
+	u-* (utilityのu)という接頭辞をつけることを推奨します。
+
+----------------------------------------------------*/
+
+.u-align-l {
+  text-align: left !important;
+}
+.u-align-c {
+  text-align: center !important;
+}
+.u-align-r {
+  text-align: right !important;
+}
+@include max-screen($bp-tab) {
+  .u-align-l-tab {
+    text-align: left !important;
+  }
+  .u-align-c-tab {
+    text-align: center !important;
+  }
+  .u-align-r-tab {
+    text-align: right !important;
+  }
+}
+@include max-screen($bp-sp) {
+  .u-align-l-sp {
+    text-align: left !important;
+  }
+  .u-align-c-sp {
+    text-align: center !important;
+  }
+  .u-align-r-sp {
+    text-align: right !important;
+  }
+}
+
+/*--------------------------
+	padding margin 調整用
+--------------------------*/
+$i: 120; // padding marginの最大値
+@while $i >= 0 {
+  .u-mt#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .u-mb#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .u-ml#{$i} {
+    margin-left: #{$i}px !important;
+  }
+  .u-mr#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .u-pt#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  .u-pb#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  .u-pl#{$i} {
+    padding-left: #{$i}px !important;
+  }
+  .u-pr#{$i} {
+    padding-right: #{$i}px !important;
+  }
+  @if $i > 80 {
+    $i: $i - 10;
+  } @else {
+    $i: $i - 5;
+  }
+}
+
+$i: 120; // padding marginの最大値
+@while $i >= 0 {
+  @include max-screen($bp-tab) {
+    .u-mt#{$i}-tab {
+      margin-top: #{$i}px !important;
+    }
+    .u-mb#{$i}-tab {
+      margin-bottom: #{$i}px !important;
+    }
+    .u-ml#{$i}-tab {
+      margin-left: #{$i}px !important;
+    }
+    .u-mr#{$i}-tab {
+      margin-right: #{$i}px !important;
+    }
+    .u-pt#{$i}-tab {
+      padding-top: #{$i}px !important;
+    }
+    .u-pb#{$i}-tab {
+      padding-bottom: #{$i}px !important;
+    }
+    .u-pl#{$i}-tab {
+      padding-left: #{$i}px !important;
+    }
+    .u-pr#{$i}-tab {
+      padding-right: #{$i}px !important;
+    }
+  }
+  @if $i > 80 {
+    $i: $i - 10;
+  } @else {
+    $i: $i - 5;
+  }
+}
+
+$i: 120; // padding marginの最大値
+@while $i >= 0 {
+  // スマホ用
+  @include max-screen($bp-sp) {
+    .u-mt#{$i}-sp {
+      margin-top: #{$i}px !important;
+    }
+    .u-mb#{$i}-sp {
+      margin-bottom: #{$i}px !important;
+    }
+    .u-ml#{$i}-sp {
+      margin-left: #{$i}px !important;
+    }
+    .u-mr#{$i}-sp {
+      margin-right: #{$i}px !important;
+    }
+    .u-pt#{$i}-sp {
+      padding-top: #{$i}px !important;
+    }
+    .u-pb#{$i}-sp {
+      padding-bottom: #{$i}px !important;
+    }
+    .u-pl#{$i}-sp {
+      padding-left: #{$i}px !important;
+    }
+    .u-pr#{$i}-sp {
+      padding-right: #{$i}px !important;
+    }
+  }
+  @if $i > 80 {
+    $i: $i - 10;
+  } @else {
+    $i: $i - 5;
+  }
+}

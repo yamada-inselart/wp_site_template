@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+/*----------------------------------------------------
+
+	JavaScriptなどの制御による状態の変化を表すスタイルの設定ファイルです。
+	汎用的なstateのスタイルをまとめています。
+	基本的には編集することはありません。
+	
+	命名規則として、クラス名の頭に 
+	is-* という接頭辞をつけることを推奨します。
+
+----------------------------------------------------*/
+
+/*--------------------------
+	レスポンシブ関係 ファブレットはなし
+--------------------------*/
+// PCのみ
+.is-Pc {
+	@include max-screen($bp-tab) {
+		display: none;
+	}
+}
+// タブレットのみ(ファブレット含む)
+.is-Tab {
+	@include max-screen($bp-sp) {
+		display: none;
+	}
+	@include min-screen($bp-tab + 1) {
+		display: none;
+	}
+}
+// スマホのみ
+.is-Sp {
+	@include min-screen($bp-sp + 1) {
+		display: none;
+	}	
+}
+
+// PC タブレットのみ
+.is-Pc_Tab {
+	@include max-screen($bp-sp) {
+		display: none;
+	}
+}
+// タブレット スマホのみ
+.is-Tab_Sp {
+	@include min-screen($bp-tab + 1) {
+		display: none;
+	}
+}
