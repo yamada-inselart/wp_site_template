@@ -7,3 +7,4 @@ require_once(dirname(__FILE__) . '/config/shortcode.php');
 require_once(dirname(__FILE__) . '/config/image-size.php');
 require_once(dirname(__FILE__) . '/config/source.php');
 require_once(dirname(__FILE__) . '/config/components.php');
+require_once(dirname(__FILE__) . '/config/functions.php');
