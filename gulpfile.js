@@ -47,7 +47,7 @@ gulp.task("babel", () => {
 gulp.task("server", () => {
   browserSync({
     files: ["./**"],
-    proxy: 'wordpress',
+    proxy: 'template.net',
     open: 'external'
   });
 });
